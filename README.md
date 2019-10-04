@@ -24,3 +24,7 @@ $ yarn generate
 ### Chapter 01 - 20191004
 
 - Nuxt.js installation
+
+### Chapter 02 - 20191004
+
+- Add application's templates
