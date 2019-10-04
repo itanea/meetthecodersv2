@@ -19,4 +19,8 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Releases notes
+
+### Chapter 01 - 20191004
+
+- Nuxt.js installation
