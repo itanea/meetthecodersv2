@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        meetthecodersv2
+        Meet The Coders
       </h1>
       <h2 class="subtitle">
         One app to rule all the coders, one app to find all the coders :-)
