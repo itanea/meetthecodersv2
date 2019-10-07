@@ -1,4 +1,9 @@
+require('dotenv').config({ debug: true })
+
 export default {
+  env: {
+    apiUrl: process.env.API_URL
+  },
   mode: 'universal',
   /*
    ** Headers of the page
@@ -43,7 +48,8 @@ export default {
     '@nuxtjs/bulma',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Axios module configuration
@@ -64,6 +70,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend (config, ctx) {}
   }
 }

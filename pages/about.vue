@@ -2,7 +2,9 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">Meet The Coders</h1>
+      <h1 class="title">
+        Meet The Coders
+      </h1>
       <h2 class="subtitle">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, sequi?
         Doloribus repudiandae aliquam temporibus magnam cupiditate officia
