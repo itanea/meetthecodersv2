@@ -2,7 +2,9 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">Meet The Coders</h1>
+      <h1 class="title">
+        Meet The Coders
+      </h1>
       <h2 class="subtitle">
         One App to rule all the coders, One App to find all the coders
       </h2>
@@ -15,10 +17,12 @@
         </a>
       </div>
 
-      <h1 class="coder-list">All Coders</h1>
+      <h1 class="coder-list">
+        All Coders
+      </h1>
 
       <div class="coder-container">
-        <div class="blank"></div>
+        <div class="blank" />
         <div class="coder-info">
           <h3>Coder Name</h3>
           <p>Future coder description can go here.</p>

@@ -28,3 +28,7 @@ $ yarn generate
 ### Chapter 02 - 20191004
 
 - Add application's templates
+
+### Chapter 05 - 20191007
+
+- Add languages page and associated pictures. Update the menu too.
