@@ -49,13 +49,27 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: process.env.API_URL
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'login', method: 'post', propertyName: 'data.token' },
+          user: { url: 'me', method: 'get', propertyName: 'data' },
+          logout: false
+        }
+      }
+    }
+  },
   /*
    ** Build configuration
    */
