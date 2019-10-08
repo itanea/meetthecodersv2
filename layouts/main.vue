@@ -1,20 +1,70 @@
 <template>
   <div>
-    <header>
-      <a id="logo" href="/">Meet The Coders</a>
-      <nav>
-        <ul>
-          <li><a href="/">Coders</a></li>
-          <li><a href="/languages">Languages</a></li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/signup">Signup</a></li>
-        </ul>
-      </nav>
-    </header>
+    <nav class="navbar is-primary">
+      <div id="logo" class="navbar-brand">
+        <a class="navbar-item" href="/">
+          Meet The Coders
+        </a>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+          <span />
+          <span />
+          <span />
+        </div>
+      </div>
 
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">
+            Home
+          </a>
+          <a class="navbar-item" href="/languages">
+            Languages
+          </a>
+        </div>
+
+        <div class="navbar-end">
+          <div v-if="isAuthenticated" class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="#">
+              {{ loggedInUser.username }}
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="/me">
+                Profile
+              </a>
+              <a class="navbar-item" @click="logout">
+                Logout
+              </a>
+            </div>
+          </div>
+          <template v-else>
+            <a class="navbar-item" href="/register">
+              Register
+            </a>
+            <a class="navbar-item" href="/login">
+              Login
+            </a>
+          </template>
+        </div>
+      </div>
+    </nav>
     <nuxt />
   </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters(['isAuthenticated', 'loggedInUser'])
+  },
+  methods: {
+    async logout () {
+      await this.$auth.logout()
+    }
+  }
+}
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,700');
@@ -35,8 +85,8 @@ body {
 ul {
   list-style-type: none;
 }
-header {
-  background-color: #303c49;
+header,
+.navbar {
   display: grid;
   grid-template-columns: 30% auto;
 }
@@ -48,24 +98,22 @@ header a {
 #logo {
   font-weight: bold;
   font-size: 1.3em;
-  padding: 1.5em 0 0 2em;
+  padding: 1.5em 0 2em 0;
   margin: 0;
 }
 #logo a:hover {
   color: #fff;
 }
+
 nav {
   justify-self: right;
 }
-nav ul li {
+nav {
   display: inline;
 }
-nav ul li a {
+nav a {
   padding: 2em;
   display: inline-block;
-}
-nav ul li a:hover {
-  background: #41b883;
 }
 .container {
   width: calc(100% - 4em);
@@ -96,6 +144,18 @@ h1 {
 }
 a:hover {
   background: #41b883;
+  color: #fff;
+}
+.navbar-item,
+.navbar-link {
+  color: #fff;
+  font-weight: 700;
+}
+.navbar-dropdown {
+  background-color: #00B89C;
+}
+#logo:hover {
+  background-color: #00B89C;
   color: #fff;
 }
 </style>
