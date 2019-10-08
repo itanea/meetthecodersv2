@@ -32,3 +32,7 @@ $ yarn generate
 ### Chapter 05 - 20191007
 
 - Add languages page and associated pictures. Update the menu too.
+
+### Chapter 06 - 20191009
+
+- Add authentication system to our application Meet The Coders
